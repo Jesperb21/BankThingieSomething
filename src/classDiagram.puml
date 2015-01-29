@@ -1,0 +1,51 @@
+@startuml
+
+class Customer {
++address : string
++name : string
++customerID : int
++Customer(Name,Address,CustomerID)
+}
+interface IAccount {
+GetBalance(double):bool
+GetAccountName():string
+GetInterestRate():double
+GetCustomerID():int
+Withdraw(double):bool
+Deposit(double):bool
+}
+abstract class Account {
+balance:double
+interestRate:double
+customerID:int
+accountID:int
+}
+class Lønkonti {
++Lønkonti(Balance, InterestRate, CustomerID, AccountID)
+}
+class Opsparingskonti {
++locked:bool
++lockedUntil:int
++Opsparingskonti(Balance, InterestRate, CustomerID, AccountID, locked)
++Opsparingskonti(Balance, InterestRate, CustomerID, AccountID, locked, lockedUntil)
+}
+class Bank {
++address : string
++name : string
+-customers : List<Customer>
+-accounts : List<Account>
++bank(Name, Address)
++createAccount(Account):bool
++createCustomer(Customer):bool
++createCustomer(Name, Address):bool
++transferCash(SenderAccount, ReceiverAccount, amount):bool
+
+}
+
+Account -up-|> IAccount
+Customer "1" - "0-1" Account
+Bank "1" o- "*" Account
+Lønkonti .up.|> Account
+Opsparingskonti .up.|> Account
+
+@enduml
