@@ -1,14 +1,10 @@
 package com.company;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-/**
- * Created by user on 27-01-2015.
- */
 public class Bank {
     public Bank(String Name, String Address){
         name = Name;
@@ -16,8 +12,8 @@ public class Bank {
     }
     String name;
     String address;
-    private List<Customer> customers = new ArrayList<Customer>();
-    private List<Account> accounts = new ArrayList<Account>();
+    public List<Customer> customers = new ArrayList<Customer>();
+    public List<Account> accounts = new ArrayList<Account>();
 
     public Account getAccByID(int id){
         for (Account a : accounts){
@@ -74,6 +70,7 @@ public class Bank {
     }
     public boolean createSavingsAccount(double balance, double interestRate, int customerID, boolean locked, int until){
         int id;
+        sortAccountList();
         if(accounts.size() != 0) {
             id = (accounts.get(accounts.size()-1).accountID + 1);
         }else {
