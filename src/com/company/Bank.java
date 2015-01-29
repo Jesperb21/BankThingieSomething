@@ -6,12 +6,16 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Bank {
-    public Bank(String Name, String Address){
+    public Bank(String Name, String Address, Integer Id){
         name = Name;
         address = Address;
+        id = Id;
+        customers = SQLiteHandler.fetchCustomers(id);
+        accounts = SQLiteHandler.fetchAccounts(id);
     }
     String name;
     String address;
+    Integer id;
     public List<Customer> customers = new ArrayList<Customer>();
     public List<Account> accounts = new ArrayList<Account>();
 

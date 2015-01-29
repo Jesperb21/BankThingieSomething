@@ -15,7 +15,7 @@ public class Main {
     public static void main(String[] args) {
         // write your code here
         managementSystem m = new managementSystem();
-        if(m.setupBank() && m.loadSettings()) {
+        if(m.setupBank()) {
             println("banken er oprettet og settings er importeret succesfylt");
             println();
             println("-----------------------------------------------------------------------------------");

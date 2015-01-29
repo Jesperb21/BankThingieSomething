@@ -12,28 +12,11 @@ public class managementSystem {
 
 
         if(bank != null) { //hvis banken blev oprettet
+            System.out.println(String.format("welcome to bank: %s, with the id: %d", bank.name, bank.id));
             return true;
         }else { //hvis banken ikke blev oprettet
+            System.out.println(String.format("welcome to bank: %s, with the id: %d", bank.name, bank.id));
             return false;
-        }
-    }
-    public boolean loadSettings(){
-        //load settings, lige nu sætter den kun nogle statiske test variabler ind, senere kunne den importere fra en sql database e.l.
-        bank.createCustomer("gertrud", "viborgvej 1");
-        bank.createCustomer("gert", "viborgvej 2");
-        bank.createCustomer("viktor", "viborgvej 3");
-        bank.createCustomer("vicky", "viborgvej 4");
-
-        bank.createLoenAccount(1000.0, 0.3,1);
-        bank.createLoenAccount(10500.0, 0.1,2);
-        bank.createSavingsAccount(1500.0, 0.7,3, false);
-        bank.createSavingsAccount(523200.0, 0.5,4, false);
-
-        if(bank.accounts.isEmpty() || bank.customers.isEmpty()){
-            //hvis bankens accounts og customers lister er tomme gik der et eller andet galt
-            return false;
-        }else {
-            return true;
         }
     }
     //endregion
