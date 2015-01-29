@@ -2,8 +2,6 @@ package com.company;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
-import java.util.DoubleSummaryStatistics;
-
 /**
  * Created by user on 27-01-2015.
  */

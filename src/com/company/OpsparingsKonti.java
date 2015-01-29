@@ -1,10 +1,5 @@
 package com.company;
 
-import java.util.concurrent.locks.Lock;
-
-/**
- * Created by user on 27-01-2015.
- */
 public class OpsparingsKonti extends Account{
     public OpsparingsKonti(Double Balance, double InterestRate, int CustomerID, int AccountID, boolean Locked, int LockedUntil){
         lockedUntil = LockedUntil;

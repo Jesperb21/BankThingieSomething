@@ -1,29 +1,15 @@
 package com.company;
 
 import java.util.List;
-import java.util.Scanner;
 
-/**
- * Created by user on 27-01-2015.
- */
 //view & controller
 public class managementSystem {
     private Bank bank;
     //region setup and load settings
     public boolean setupBank(){
-        //setup basic bank og spørg efter input fra useren
-        String BankName;
-        String BankAddress;
-        Scanner user_input = new Scanner(System.in); //linjen ind i programmet fra consollen
+        //load bank fra sql
+        bank = SQLiteHandler.fetchBank();
 
-        System.out.print("insert name for bank:");
-        BankName = user_input.next(); //det næste der bliver skrevet, vent indtil enter bliver trykket på
-        System.out.println("name: "+BankName);
-        System.out.print("bank address:");
-        BankAddress = user_input.next(); //det næste der bliver skrevet, vent indtil enter bliver trykket på (igen)
-        System.out.println("address: "+BankAddress);
-
-        bank = new Bank(BankName, BankAddress); //opret en ny bank med data inputtet fra useren ovenfor
 
         if(bank != null) { //hvis banken blev oprettet
             return true;

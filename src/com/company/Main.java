@@ -1,7 +1,5 @@
 package com.company;
 
-import java.io.Console;
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
@@ -17,7 +15,7 @@ public class Main {
     public static void main(String[] args) {
         // write your code here
         managementSystem m = new managementSystem();
-        if(m.setupBank() == true && m.loadSettings() == true) {
+        if(m.setupBank() && m.loadSettings()) {
             println("banken er oprettet og settings er importeret succesfylt");
             println();
             println("-----------------------------------------------------------------------------------");
@@ -27,6 +25,7 @@ public class Main {
             println();
             boolean repeatMenu = true;
             while (repeatMenu) {
+                println("0: exit");
                 println("1: opret customer");
                 println("2: opret accounts");
                 println("3: list customers");
@@ -151,12 +150,27 @@ public class Main {
                 }
             }
 
-            //todo - opret account  done
-            //todo - list bruger    done
-            //todo - list accounts  done
-            //todo - deposit & withdraw
-            //todo - transfer
-            //todo - SQL
+            //todo - opret account          done
+            //todo - list bruger            done
+            //todo - list accounts          done
+            //todo - deposit & withdraw     done-ish
+            //todo - transfer               done
+            //todo - SQL                    done-ish
+
+            /*
+        String BankName;
+        String BankAddress;
+        Scanner user_input = new Scanner(System.in); //linjen ind i programmet fra consollen
+
+        System.out.print("insert name for bank:");
+        BankName = user_input.next(); //det næste der bliver skrevet, vent indtil enter bliver trykket på
+        System.out.println("name: "+BankName);
+        System.out.print("bank address:");
+        BankAddress = user_input.next(); //det næste der bliver skrevet, vent indtil enter bliver trykket på (igen)
+        System.out.println("address: "+BankAddress);
+
+        bank = new Bank(BankName, BankAddress); //opret en ny bank med data inputtet fra useren ovenfor
+        */
         }
     }
 
